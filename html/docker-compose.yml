@@ -1,0 +1,9 @@
+version: '3'
+services:
+  nginx:
+    build: ./html
+    image: nginx:latest
+    restart: always
+    ports:
+      - 7005:80
+   
