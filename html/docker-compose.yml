@@ -5,5 +5,5 @@ services:
     image: nginx:latest
     restart: always
     ports:
-      - 7005:80
+      - 7500:80
    

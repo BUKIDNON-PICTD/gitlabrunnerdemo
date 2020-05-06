@@ -13,7 +13,7 @@ step-develop:
   only:
     - develop
   tags:
-    - develop
+    - gitlabrunnerdemo-dev
   script:
     - echo running tests in $DYNAMIC_ENV_VAR
 
@@ -24,7 +24,7 @@ step-uat:
   only:
     - uat
   tags:
-    - uat
+    - gitlabrunnerdemo-uat
   script:
     - echo setting up env $DYNAMIC_ENV_VAR
     - sudo apt-get install -y python-pip
@@ -40,7 +40,7 @@ step-deploy-staging:
   only:
     - staging
   tags:
-    - staging
+    - gitlabrunnerdemo-stage
   script:
     - echo setting up env $DYNAMIC_ENV_VAR
     - sudo apt-get install -y python-pip
@@ -56,7 +56,7 @@ step-deploy-production:
   only:
     - production
   tags:
-    - production
+    - gitlabrunnerdemo-prod
   script:
     - echo setting up env $DYNAMIC_ENV_VAR
     - sudo apt-get install -y python-pip
@@ -64,7 +64,7 @@ step-deploy-production:
     - sudo docker image prune -f
     - sudo docker-compose -f docker-compose.yml build --no-cache
     - sudo docker-compose -f docker-compose.yml up -d
-  when: manual
+ 
 
 
 
